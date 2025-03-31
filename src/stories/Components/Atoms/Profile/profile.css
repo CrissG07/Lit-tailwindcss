@@ -1,0 +1,21 @@
+@reference '../../../../input.css';
+
+    .profile-picture__container {
+      @apply flex justify-center items-center;
+    }
+  
+    .profile-picture__image {
+      @apply rounded-full object-cover;
+    }
+  
+    .small {
+      @apply w-16 h-16;
+    }
+  
+    .medium {
+      @apply w-32 h-32;
+    }
+  
+    .large {
+      @apply w-64 h-64;
+    }

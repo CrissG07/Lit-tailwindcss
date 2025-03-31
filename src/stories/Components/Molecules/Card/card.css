@@ -1,0 +1,53 @@
+@reference '../../../../input.css';
+
+/* Contenedor principal de la tarjeta */
+.card {
+  @apply w-[550px] rounded-xl shadow-lg overflow-hidden transition-all duration-300 transform bg-white dark:bg-gray-900 hover:shadow-xl hover:scale-[1.02];
+}
+
+.card--border {
+  @apply border border-gray-200 dark:border-gray-700;
+}
+
+/* Cabecera de la tarjeta */
+.card__header {
+  @apply flex items-center gap-4 p-4 bg-blue-100 dark:bg-blue-900;
+}
+
+.card__icon {
+  @apply w-12 h-12 flex items-center justify-center rounded-full bg-blue-500 text-white;
+}
+
+.card__icon-svg {
+  @apply w-6 h-6;
+}
+
+.card__alert-message {
+  @apply text-lg font-semibold text-gray-900 dark:text-white;
+}
+
+/* Mensaje de la tarjeta */
+.card__message {
+  @apply p-4 text-gray-700 dark:text-gray-300;
+}
+
+/* Acciones de la tarjeta */
+.card__actions {
+  @apply flex justify-end gap-3 p-4 bg-gray-50 dark:bg-gray-800;
+}
+
+.card__link {
+  @apply px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 no-underline;
+}
+
+.card__link--primary {
+  @apply bg-blue-500 text-white hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-500;
+}
+
+.card__link--secondary {
+  @apply bg-gray-200 text-gray-900 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white;
+}
+
+.card__link--secondary-disabled {
+  @apply bg-gray-300 text-gray-500 cursor-not-allowed dark:bg-gray-800;
+}

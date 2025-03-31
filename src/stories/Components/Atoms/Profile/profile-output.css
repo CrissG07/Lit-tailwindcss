@@ -1,0 +1,22 @@
+/*! tailwindcss v4.0.7 | MIT License | https://tailwindcss.com */
+.profile-picture__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile-picture__image {
+  border-radius: calc(infinity * 1px);
+  object-fit: cover;
+}
+.small {
+  height: calc(var(--spacing) * 16);
+  width: calc(var(--spacing) * 16);
+}
+.medium {
+  height: calc(var(--spacing) * 32);
+  width: calc(var(--spacing) * 32);
+}
+.large {
+  height: calc(var(--spacing) * 64);
+  width: calc(var(--spacing) * 64);
+}

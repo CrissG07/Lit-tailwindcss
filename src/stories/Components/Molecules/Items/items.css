@@ -1,0 +1,45 @@
+@reference '../../../../input.css';
+
+/* Contenedor principal */
+.items {
+  @apply grid gap-4 mt-2;
+}
+
+/* Tarjeta */
+.items__card {
+  @apply flex gap-2 items-center border-2 border-gray-300 dark:border-gray-600 p-4 rounded-lg shadow-sm bg-white dark:bg-zinc-800;
+}
+
+/* Miniatura con color dinámico */
+.items__thumbnail {
+  @apply w-40 h-25 rounded;
+}
+
+.items__thumbnail--blue {
+    @apply bg-blue-600;
+  }
+
+  .items__thumbnail--yellow {
+    @apply bg-yellow-600;
+  }
+
+  .items__thumbnail--red {
+    @apply bg-red-600;
+  }
+
+  .items__thumbnail--green {
+    @apply bg-green-600;
+  }
+/* Contenido de la tarjeta */
+.items__content {
+  @apply grid gap-1 text-sm flex-1;
+}
+
+.items__title {
+  @apply font-semibold leading-none line-clamp-2 text-gray-800 dark:text-gray-100;
+}
+
+.items__views,
+.items__date {
+  @apply text-xs text-gray-500 dark:text-gray-400 line-clamp-1;
+}

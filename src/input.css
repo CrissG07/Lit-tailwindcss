@@ -1,0 +1,113 @@
+@import "tailwindcss";
+/* Estilos generales para el body */
+body {
+    background-color: #666; /* Fondo gris claro */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  /* Estilos para el título h1 */
+  h1 {
+    font-size: 2.5rem; /* text-4xl */
+    font-weight: 700; /* font-bold */
+    text-align: center;
+    color: #fff; /* text-gray-800 */
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Contenedor principal */
+  .container {
+    max-width: 1200px; /* max-w-screen-xl */
+    width: 100%;
+    padding: 1rem;
+    margin: 0 auto;
+  }
+  
+  /* Wrapper que agrupa los componentes */
+  .component-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 2rem 1rem;
+    width: 100%;
+    justify-items: center;
+  }
+  
+  /* Estilos para los componentes */
+  .banner,
+  .items {
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 1rem; /* Bordes redondeados */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    padding: 2rem; /* Espaciado interno */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  /* Efecto hover en los componentes */
+  .banner:hover,
+  .items:hover {
+    transform: translateY(-5px); /* Sube ligeramente al hacer hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Aumenta la sombra al hacer hover */
+  }
+  
+  /* Estilos para las imágenes dentro de los componentes */
+  .banner img,
+  .items img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+  }
+  
+  /* Estilos específicos para el banner */
+  .banner__title {
+    font-size: 2rem; /* text-3xl */
+    font-weight: 700; /* font-bold */
+    color: #2d3748; /* color gris oscuro */
+    margin-bottom: 1rem;
+  }
+  
+  .banner__description {
+    font-size: 1.1rem; /* text-base */
+    color: #4a5568; /* text-gray-600 */
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    text-align: center;
+  }
+  
+  /* Estilos para los items */
+  .items__title {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 700; /* font-bold */
+    color: #2b6cb0; /* color azul */
+    margin-bottom: 0.75rem;
+  }
+  
+  .items__views {
+    font-size: 1rem; /* text-base */
+    color: #718096; /* text-gray-500 */
+    margin-bottom: 1rem;
+  }
+  
+  /* Estilos para el contenedor de la imagen en items */
+  .items__image {
+    display: block;
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 1rem;
+    margin-top: 1rem;
+  }
+  

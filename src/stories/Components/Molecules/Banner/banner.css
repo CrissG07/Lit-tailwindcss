@@ -1,0 +1,27 @@
+@reference '../../../../input.css';
+
+.banner__container {
+  @apply flex flex-wrap max-w-5xl mx-auto rounded-xl overflow-hidden 
+       bg-emerald-600
+         transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl;
+}
+
+.banner__content {
+  @apply flex-1 p-8 flex flex-col justify-center items-center text-center;
+}
+
+.banner__title {
+  @apply text-4xl font-bold text-gray-800 leading-snug;
+}
+
+.banner__description {
+  @apply mt-4 text-base text-white leading-relaxed;
+}
+
+.banner__image {
+  @apply flex-1 aspect-[4/3] flex items-center justify-center;
+}
+
+.banner__image img {
+  @apply w-full h-full object-cover rounded-xl;
+}

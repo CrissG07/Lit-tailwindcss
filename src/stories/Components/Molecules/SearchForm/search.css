@@ -1,0 +1,9 @@
+@reference '../../../../input.css';
+
+.search{
+    @apply flex gap-2 items-center;
+}
+
+.search__input{
+    @apply px-4 py-2 border rounded-md flex-1;
+}

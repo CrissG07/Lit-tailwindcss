@@ -1,0 +1,9 @@
+@reference '../../../../input.css';
+
+.history{
+    @apply p-4 w-[800px] rounded-lg border dark:border-gray-800 dark:bg-gray-700;
+}
+
+.history__title{
+    @apply text-2xl font-bold dark:text-white;
+}

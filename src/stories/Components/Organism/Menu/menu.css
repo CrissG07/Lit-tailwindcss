@@ -1,0 +1,32 @@
+@reference '../../../../input.css';
+
+
+.header {
+    @apply bg-gray-200 shadow-sm;
+  }
+  
+  /* Contenedor principal */
+  .header__container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Barra del encabezado con altura y alineación */
+  .header__bar {
+    @apply h-16 flex items-center justify-between gap-4;
+  }
+  
+  /* Logo */
+  .header__logo {
+    @apply flex-shrink-0 text-xl font-bold text-blue-600;
+  }
+  
+  /* Contenedor del buscador */
+  .header__search {
+    @apply flex-1 max-w-3xl mx-4 lg:mx-8;
+  }
+  
+  /* Botón pequeño */
+  .header__button {
+    @apply !p-2;
+  }
+  
