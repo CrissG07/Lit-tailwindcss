@@ -1,10 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + Lit + TS</title>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <script type="module" src="/src/stories/Components/Organism/History/History.ts"></script>
     <script type="module" src="/src/stories/Components/Molecules/Items/items.ts"></script>
     <script type="module" src="/src/stories/Components/Molecules/Banner/banner.ts"></script>
@@ -12,40 +13,53 @@
   </head>
   <body>
     <div class="container">
-      <h1>Componentes hechos con Lit y TailwindCSS</h1>
+        <h1>Componentes hechos con Lit y TailwindCSS</h1>
 
-      <div class="component-wrapper">
-        <banner-component 
-          title="Bienvenido a la comunidad de Web components"
-          description="Aprende a crear componentes reutilizables y escalables con Web components"
-          imageSrc="https://picsum.photos/800/400?random=1"
-          theme="dark"
-          rounded>
-        </banner-component>
-        
-        <history-component>
-          <items-component 
-            title="Todo lo que debes saber de Web components"
-            views="10M"
-            color="yellow"
-            date="2025-03-31">
-          </items-component>
+        <div class="component-wrapper">
+          <banner-component 
+            title="Bienvenido a la comunidad de Web components"
+            description="Aprende a crear componentes reutilizables y escalables con Web components"
+            imageSrc="https://picsum.photos/800/400?random=1"
+            theme="dark"
+            rounded>
+          </banner-component>
           
-          <items-component 
-            title="Lo mejor de TailwindCSS"
-            views="1M"
-            color="blue"
-            date="2024-03-31">
-          </items-component>
-          
-          <items-component 
-            title="Las mejores practicas de Lit"
-            views="3M"
-            color="green"
-            date="2025-01-31">
-          </items-component>
-        </history-component>
+          <history-component>
+            <items-component 
+              title="Todo lo que debes saber de Web components"
+              views="10M"
+              color="yellow"
+              date="2025-03-31"
+              icon='<iconify-icon icon="mdi:code-tags" width="24"></iconify-icon>'>
+            </items-component>
+            
+            <items-component 
+              title="Lo mejor de TailwindCSS"
+              views="1M"
+              color="blue"
+              date="2024-03-31"
+              icon='<iconify-icon icon="mdi:palette" width="24"></iconify-icon>'>
+            </items-component>
+            
+            <items-component 
+              title="Las mejores practicas de Lit"
+              views="3M"
+              color="green"
+              date="2025-01-31"
+              icon='<iconify-icon icon="mdi:lightbulb" width="24"></iconify-icon>'>
+            </items-component>
+
+            <items-component
+              title="Video Tutorial"
+              views="1.2M views"
+              date="2024-04-02"
+              color="red"
+              icon='<iconify-icon icon="mdi:play-circle" width="24"></iconify-icon>'
+              href="https://www.youtube.com/watch?v=0T_c_suGH18"
+              clickable
+            ></items-component>
+          </history-component>
+        </div>
       </div>
-    </div>
   </body>
 </html>
