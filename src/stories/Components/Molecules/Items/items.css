@@ -53,3 +53,12 @@
 .items__date {
   @apply text-xs text-gray-500 dark:text-gray-400;
 }
+
+/* Estilos para enlaces */
+:host a {
+  @apply no-underline text-inherit;
+}
+
+:host a:hover {
+  @apply no-underline;
+}
