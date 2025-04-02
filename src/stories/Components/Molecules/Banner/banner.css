@@ -1,27 +1,119 @@
 @reference '../../../../input.css';
 
+/* Contenedor principal */
 .banner__container {
-  @apply flex flex-wrap max-w-5xl mx-auto rounded-xl overflow-hidden 
-       bg-emerald-600
-         transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl;
+  @apply flex flex-wrap max-w-5xl mx-auto overflow-hidden
+         transition-all duration-300 hover:shadow-2xl;
 }
 
+/* Variantes de tema */
+.banner__container--light {
+  @apply bg-white text-gray-800;
+}
+
+.banner__container--dark {
+  @apply bg-gray-800 text-white;
+}
+
+.banner__container--emerald {
+  @apply bg-emerald-600 text-white;
+}
+
+/* Bordes redondeados */
+.banner__container--rounded {
+  @apply rounded-xl hover:scale-[1.03];
+}
+
+/* Estilos para móvil */
+.banner__container--mobile {
+  @apply flex-col;
+}
+
+/* Contenido de texto */
 .banner__content {
   @apply flex-1 p-8 flex flex-col justify-center items-center text-center;
 }
 
+.banner__container--mobile .banner__content {
+  @apply w-full;
+}
+
 .banner__title {
-  @apply text-4xl font-bold text-gray-800 leading-snug;
+  @apply text-4xl font-bold leading-snug;
+}
+
+.banner__container--dark .banner__title {
+  @apply text-white;
+}
+
+.banner__container--light .banner__title {
+  @apply text-gray-800;
+}
+
+.banner__container--emerald .banner__title {
+  @apply text-white;
 }
 
 .banner__description {
-  @apply mt-4 text-base text-white leading-relaxed;
+  @apply mt-4 text-base leading-relaxed;
 }
 
+.banner__container--dark .banner__description {
+  @apply text-gray-300;
+}
+
+.banner__container--light .banner__description {
+  @apply text-gray-600;
+}
+
+.banner__container--emerald .banner__description {
+  @apply text-white;
+}
+
+/* Sección de imagen */
 .banner__image {
-  @apply flex-1 aspect-[4/3] flex items-center justify-center;
+  @apply flex-1 aspect-[4/3] flex items-center justify-center relative overflow-hidden;
+}
+
+.banner__container--mobile .banner__image {
+  @apply w-full;
+}
+
+.banner__image--rounded img {
+  @apply rounded-xl;
 }
 
 .banner__image img {
-  @apply w-full h-full object-cover rounded-xl;
+  @apply w-full h-full object-cover transition-transform duration-500;
+}
+
+.banner__container:hover .banner__image img {
+  @apply scale-105;
+}
+
+/* Estado de carga */
+.banner__loading-indicator {
+  @apply flex flex-col items-center justify-center h-full w-full bg-gray-200;
+}
+
+.banner__loading-indicator .loader {
+  @apply w-12 h-12 border-4 border-gray-300 border-t-emerald-500 rounded-full animate-spin;
+}
+
+/* Estado de error */
+.banner__error {
+  @apply flex flex-col items-center justify-center h-full w-full bg-red-100 p-4 text-center;
+}
+
+.banner__error span {
+  @apply text-4xl mb-2;
+}
+
+.banner__error p {
+  @apply text-red-600 font-medium;
+}
+
+/* Slot para CTA */
+::slotted([slot="cta"]) {
+  @apply mt-6 flex gap-4 justify-center;
 }

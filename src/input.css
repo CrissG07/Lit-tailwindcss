@@ -1,113 +1,183 @@
 @import "tailwindcss";
 /* Estilos generales para el body */
+/* Variables para colores y estilos consistentes */
+:root {
+  --primary-color: #3b82f6;
+  --secondary-color: #1e40af;
+  --accent-color: #f97316;
+  --background-color: #1f2937;
+  --card-background: #ffffff;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --border-radius: 1rem;
+  --box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --transition-standard: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Estilos generales para el body */
 body {
-    background-color: #666; /* Fondo gris claro */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* Estilos para el título principal */
+h1 {
+  font-size: 2.75rem;
+  font-weight: 800;
+  text-align: center;
+  background: linear-gradient(90deg, #60a5fa, #f97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  margin: 2rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+/* Línea decorativa debajo del título */
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 4px;
+  background: linear-gradient(90deg, #60a5fa, #f97316);
+  border-radius: 2px;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 1280px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+
+/* Wrapper que agrupa los componentes con layout responsive */
+.component-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  width: 100%;
+}
+
+/* Estilos específicos para el banner (asegurarse que ocupe todo el ancho) */
+banner-component {
+  width: 100%;
+  grid-column: 1 / -1;
+  display: block;
+  margin-bottom: 1rem;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Estilos para el componente de historial */
+history-component {
+  width: 100%;
+  grid-column: 1 / -1;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: slideUp 0.8s ease-out 0.2s backwards;
+}
+
+/* Estilos para los items individuales */
+items-component {
+  display: block;
+  margin-bottom: 1.5rem;
+  transition: var(--transition-standard);
+  transform-origin: center;
+}
+
+items-component:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+items-component:last-child {
+  margin-bottom: 0;
+}
+
+/* Animaciones para cargar los componentes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
   }
-  
-  /* Estilos para el título h1 */
-  h1 {
-    font-size: 2.5rem; /* text-4xl */
-    font-weight: 700; /* font-bold */
-    text-align: center;
-    color: #fff; /* text-gray-800 */
-    margin-top: 3rem;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-family: 'Arial', sans-serif;
+  to { 
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* Contenedor principal */
-  .container {
-    max-width: 1200px; /* max-w-screen-xl */
-    width: 100%;
-    padding: 1rem;
-    margin: 0 auto;
-  }
-  
-  /* Wrapper que agrupa los componentes */
+}
+
+/* Media queries para diseño responsive */
+@media (min-width: 768px) {
   .component-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-top: 2rem;
-    padding: 2rem 1rem;
-    width: 100%;
-    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
   }
   
-  /* Estilos para los componentes */
-  .banner,
-  .items {
-    background-color: #ffffff; /* Fondo blanco */
-    border-radius: 1rem; /* Bordes redondeados */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); /* Sombra suave */
-    padding: 2rem; /* Espaciado interno */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
-    width: 100%;
-    max-width: 500px;
+  banner-component {
+    grid-column: 1 / -1;
   }
   
-  /* Efecto hover en los componentes */
-  .banner:hover,
-  .items:hover {
-    transform: translateY(-5px); /* Sube ligeramente al hacer hover */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Aumenta la sombra al hacer hover */
+  history-component {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .component-wrapper {
+    grid-template-columns: repeat(3, 1fr);
   }
   
-  /* Estilos para las imágenes dentro de los componentes */
-  .banner img,
-  .items img {
-    width: 100%;
-    height: auto;
-    border-radius: 1rem;
+  banner-component {
+    grid-column: 1 / -1;
   }
   
-  /* Estilos específicos para el banner */
-  .banner__title {
-    font-size: 2rem; /* text-3xl */
-    font-weight: 700; /* font-bold */
-    color: #2d3748; /* color gris oscuro */
-    margin-bottom: 1rem;
+  history-component {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 1280px) {
+  .container {
+    padding: 3rem 0 5rem;
   }
   
-  .banner__description {
-    font-size: 1.1rem; /* text-base */
-    color: #4a5568; /* text-gray-600 */
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-    text-align: center;
+  history-component {
+    padding: 2rem;
+  }
+}
+
+/* Optimizaciones para pantallas pequeñas */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2rem;
+    margin: 1.5rem 0;
   }
   
-  /* Estilos para los items */
-  .items__title {
-    font-size: 1.5rem; /* text-2xl */
-    font-weight: 700; /* font-bold */
-    color: #2b6cb0; /* color azul */
-    margin-bottom: 0.75rem;
+  .container {
+    width: 95%;
+    padding: 1rem 0 3rem;
   }
-  
-  .items__views {
-    font-size: 1rem; /* text-base */
-    color: #718096; /* text-gray-500 */
-    margin-bottom: 1rem;
-  }
-  
-  /* Estilos para el contenedor de la imagen en items */
-  .items__image {
-    display: block;
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
-    border-radius: 1rem;
-    margin-top: 1rem;
-  }
-  
+}
