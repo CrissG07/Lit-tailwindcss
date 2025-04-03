@@ -1,0 +1,107 @@
+@reference '../../../../input.css';
+
+.login {
+  @apply min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-900 font-sans text-gray-100 antialiased;
+}
+
+.login__header {
+  @apply mb-6;
+}
+
+.login__title {
+  @apply font-bold text-3xl text-white;
+}
+
+.login__title-highlight {
+  @apply bg-[#f84525] text-white px-2 rounded-md;
+}
+
+.login__container {
+  @apply w-full sm:max-w-md px-6 py-4 bg-gray-800 shadow-md overflow-hidden transition-all duration-200;
+}
+
+.login__container--rounded {
+  @apply sm:rounded-lg;
+}
+
+.login__form {
+  @apply space-y-4;
+}
+
+.login__form-header {
+  @apply text-center;
+}
+
+.login__form-title {
+  @apply text-2xl font-semibold text-white;
+}
+
+.login__form-group {
+  @apply space-y-2;
+}
+
+.login__label {
+  @apply block font-medium text-sm text-gray-300;
+}
+
+.login__input {
+  @apply w-100 rounded-md py-2.5 px-4 border border-gray-600 bg-gray-700 text-white text-sm transition-colors duration-200;
+  @apply focus:outline-none focus:ring-2 focus:ring-[#f84525] focus:border-transparent;
+}
+
+.login__input--error {
+  @apply border-red-500 focus:ring-red-500;
+}
+
+.login__error-message {
+  @apply text-sm text-red-500 mt-1;
+}
+
+.login__password-container {
+  @apply relative;
+}
+
+.login__toggle-password {
+  @apply absolute right-3 top-1/7 transform -translate-y-1/2 border-none cursor-pointer;
+  @apply p-1.5 rounded-full bg-gray-600 hover:bg-gray-500;
+  @apply text-gray-300 hover:text-white transition-all duration-200;
+  @apply focus:outline-none focus:ring-2 focus:ring-[#f84525];
+  @apply flex items-center justify-center;
+  @apply w-8 h-8;
+}
+
+.login__input[type="password"],
+.login__input[type="text"] {
+  @apply pr-5; /* Asegura espacio para el botón */
+}
+
+.login__remember {
+  @apply mt-4;
+}
+
+.login__checkbox-label {
+  @apply flex items-center space-x-2 text-sm text-gray-400;
+}
+
+.login__checkbox {
+  @apply rounded border-gray-600 text-[#f84525] bg-gray-700 shadow-sm;
+  @apply focus:ring-[#f84525] focus:ring-offset-gray-800 focus:ring-offset-0;
+}
+
+.login__actions {
+  @apply flex items-center justify-end mt-4 space-x-4;
+}
+
+.login__forgot-password {
+  @apply text-sm text-gray-400 hover:text-white hover:underline;
+  @apply rounded-md focus:outline-none focus:ring-2 focus:ring-[#f84525] focus:ring-offset-2 focus:ring-offset-gray-800;
+  @apply transition-colors duration-200;
+}
+
+.login__button {
+  @apply inline-flex items-center px-4 py-2 bg-[#f84525] border border-transparent;
+  @apply rounded-md font-semibold text-xs text-white uppercase tracking-widest;
+  @apply hover:bg-red-800 focus:bg-red-700 active:bg-red-900;
+  @apply focus:outline-none focus:ring-2 focus:ring-[#f84525] focus:ring-offset-2 focus:ring-offset-gray-800;
+  @apply transition-all duration-200 ease-in-out;
+}

@@ -1,0 +1,41 @@
+
+@reference '../../../../input.css';
+
+.cat-card {
+  @apply bg-gray-800 rounded-lg shadow-xl overflow-hidden max-w-sm mx-auto;
+}
+
+.cat-card__content {
+  @apply relative aspect-square w-full bg-gray-700;
+  @apply flex items-center justify-center;
+}
+
+.cat-card__image {
+  @apply w-full h-full object-cover;
+  @apply transition-opacity duration-300;
+}
+
+.cat-card__loading {
+  @apply text-gray-300 flex flex-col items-center gap-2;
+}
+
+.cat-card__loading .iconify {
+  @apply text-4xl animate-spin text-[#f84525];
+}
+
+.cat-card__error {
+  @apply text-red-400 flex flex-col items-center gap-2 p-4 text-center;
+}
+
+.cat-card__error .iconify {
+  @apply text-4xl;
+}
+
+.cat-card__refresh {
+  @apply w-full py-3 px-4 bg-[#f84525] text-white;
+  @apply flex items-center justify-center gap-2;
+  @apply transition-all duration-200;
+  @apply hover:bg-[#d63a1c] focus:outline-none focus:ring-2 focus:ring-[#f84525] focus:ring-offset-2 focus:ring-offset-gray-800;
+  @apply disabled:opacity-50 disabled:cursor-not-allowed;
+}
+

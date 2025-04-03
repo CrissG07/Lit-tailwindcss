@@ -5,14 +5,16 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + Lit + TS</title>
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     <script type="module" src="/src/stories/Components/Organism/History/History.ts"></script>
     <script type="module" src="/src/stories/Components/Molecules/Items/items.ts"></script>
     <script type="module" src="/src/stories/Components/Molecules/Banner/banner.ts"></script>
+    <script type="module" src="/src/stories/Components/Organism/Login/login.ts"></script>
+    <script type="module" src="/src/stories/Components/Organism/CatCard/cat-card.ts"></script>
     <link rel="stylesheet" href="./src/input.css">
   </head>
-  <body>
-    <div class="container">
+  <body class="bg-gray-900 min-h-screen flex items-center justify-center p-4">
+    <div class="container w-full max-w-md">
         <h1>Componentes hechos con Lit y TailwindCSS</h1>
 
         <div class="component-wrapper">
@@ -60,6 +62,10 @@
             ></items-component>
           </history-component>
         </div>
+
+        <login-component></login-component>
+
+        <cat-card></cat-card>
       </div>
   </body>
 </html>
